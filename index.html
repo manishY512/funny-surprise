@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Funny Prank Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 40px;
+      transition: background 0.5s;
+    }
+    .box {
+      background: rgba(255, 255, 255, 0.8);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      display: inline-block;
+      font-size: 20px;
+      margin-top: 50px;
+    }
+    img {
+      max-width: 90%;
+      height: auto;
+      margin: 20px auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+    button {
+      padding: 12px 25px;
+      margin: 10px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      background: #4CAF50;
+      color: #fff;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #45a049;
+    }
+    .message {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #fff;
+      font-weight: bold;
+    }
+    .disclaimer {
+      position: fixed;
+      bottom: 8px;
+      right: 8px;
+      font-size: 12px;
+      color: #fff;
+      background: rgba(0,0,0,0.5);
+      padding: 5px 10px;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Step 1 -->
+  <div id="step1" class="box">
+    <p>You are smart?</p>
+    <button onclick="yesClicked()">Yes</button>
+    <button onclick="noClicked()">No</button>
+  </div>
+
+  <!-- Step 2 -->
+  <div id="imageSection" style="display:none;">
+    <img src="donkey.jpg" alt="Prank Image">
+    <br>
+    <button onclick="showNext()">Next</button>
+  </div>
+
+  <!-- Step 3 -->
+  <div id="finalSection" style="display:none;">
+    <img src="acp.jpg" alt="Final Prank Image">
+    <div class="message">🤣 Haha! You just got pranked (for fun only!) 😜</div>
+  </div>
+
+  <!-- Disclaimer -->
+  <div class="disclaimer">⚠️ This site is only for fun and harmless pranks. No data is collected.</div>
+
+  <script>
+    // Random background color
+    const colors = ["#ff9aa2","#ffb7b2","#ffdac1","#e2f0cb","#b5ead7","#c7ceea","#f0a6ca","#a1c4fd","#c2e9fb"];
+    document.body.style.background = colors[Math.floor(Math.random() * colors.length)];
+
+    function yesClicked() {
+      alert("😎 Smart choice, but nothing happens on Yes!");
+    }
+    function noClicked() {
+      document.getElementById("step1").style.display = "none";
+      document.getElementById("imageSection").style.display = "block";
+    }
+    function showNext() {
+      document.getElementById("imageSection").style.display = "none";
+      document.getElementById("finalSection").style.display = "block";
+    }
+  </script>
+
+</body>
+  </html>
